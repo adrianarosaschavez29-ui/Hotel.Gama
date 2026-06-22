@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva - Hotel Gama</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+
+<body>
+
+    <div class="hotel">
+
+        <header class="hero">
+            <div class="circle"></div>
+
+            <div class="info">
+                <h1>GAMA</h1>
+                <p>HOTEL & SUITES · MIRAFLORES, LIMA</p>
+                <div class="stars">★★★★★</div>
+                <p class="desc">
+                    Un refugio de elegancia en el corazón de Miraflores. Diseño contemporáneo,
+                    atención personalizada y vistas al Pacífico que convierten cada estancia en una
+                    experiencia única.
+                </p>
+            </div>
+        </header>
+
+        <main class="reserva-page">
+            <div class="formulario-reserva">
+
+
+                <h2>RESERVAR HABITACIÓN</h2>
+
+                <form action="/reservar" method="POST" class="form-reserva">
+
+                    <input type="text" name="nombre" placeholder="Nombre completo" required>
+
+                    <input type="text" name="dni" placeholder="DNI" required>
+
+                    <input type="tel" name="telefono" placeholder="Teléfono" required>
+
+                    <input type="email" name="correo" placeholder="Correo electrónico" required>
+
+                    <select name="habitacion" required>
+                        <option value="">Seleccione habitación</option>
+                        <option value="Estándar Simple">Estándar Simple - S/300</option>
+                        <option value="Deluxe">Deluxe - S/580</option>
+                        <option value="Suite">Suite - S/900</option>
+                        <option value="Suite Presidencial">Suite Presidencial - S/1200</option>
+                    </select>
+
+                    <input type="text" id="entrada" name="entrada" placeholder="Fecha de entrada" required>
+
+                    <input type="text" id="salida" name="salida" placeholder="Fecha de salida" required>
+
+                    <button type="submit">Confirmar reserva</button>
+
+                </form>
+
+        </main>
+
+    </div>
+
+    <footer>
+        <span>+51 939-332-591</span>
+        <span>reservas@gamahotel.com</span>
+        <span>Miraflores, Lima</span>
+        <a href="index.html" class="btn-volver">
+            ← Volver al inicio
+        </a>
+
+    </footer>
+
+    <script>
+        flatpickr("#entrada", {
+            dateFormat: "d/m/Y"
+        });
+
+        flatpickr("#salida", {
+            dateFormat: "d/m/Y"
+        });
+    </script>
+
+</body>
+
+</html>

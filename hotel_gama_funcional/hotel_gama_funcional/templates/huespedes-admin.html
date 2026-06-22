@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Huéspedes - Hotel Gama</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>GAMA</h1>
+                <p>HOTEL & SUITES</p>
+            </div>
+
+            <h4>Principal</h4>
+            <a href="admin.html">Dashboard</a>
+            <a href="reservas-admin.html">Reservas </a>
+            <a href="huespedes-admin.html" class="active">Huéspedes</a>
+            <a href="habitaciones-admin.html">Habitaciones</a>
+
+            <h4>Operaciones</h4>
+
+            <a href="servicios-admin.html">Servicios</a>
+            <a href="facturacion-admin.html">Facturación</a>
+            <a href="mensajes-admin.html">Mensajes </a>
+
+            <h4>Análisis</h4>
+
+            <a href="reportes-admin.html">Reportes</a>
+            <a href="configuracion-admin.html">Configuración</a>
+
+            <div class="user">
+                <div class="avatar">AR</div>
+                <p>Admin Gama<br><small>Administrador</small></p>
+            </div>
+        </aside>
+
+        <main class="main">
+
+            <header class="topbar">
+                <h2><span>Huéspedes</span> · Hotel Gama</h2>
+
+                <div class="top-actions">
+                    <small>sábado, 20 de junio</small>
+                    <a href="login.html">Salir</a>
+                </div>
+            </header>
+
+            <section class="panel huespedes-panel">
+
+                <h3>DIRECTORIO DE HUÉSPEDES</h3>
+
+                <div class="acciones-tabla">
+                    <input type="text" placeholder="Buscar huésped...">
+                    <button onclick="abrirFormulario()">+ Nuevo huésped</button>
+                    <form action="/agregar_huesped" method="POST" id="formHuesped"
+                        style="display:none; margin-top:15px;">
+
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <input type="text" name="dni" placeholder="DNI" required>
+                        <input type="email" name="correo" placeholder="Correo" required>
+                        <input type="tel" name="telefono" placeholder="Teléfono" required>
+
+                        <button type="submit">Guardar huésped</button>
+
+                    </form>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>DNI</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                    </tr>
+
+                    {% for h in huespedes %}
+                    <tr>
+                        <td>{{ h.nombre }}</td>
+                        <td>{{ h.dni }}</td>
+                        <td>{{ h.correo }}</td>
+                        <td>{{ h.telefono }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+            </section>
+
+        </main>
+    </div>
+    <script>
+        function abrirFormulario() {
+            document.getElementById("formHuesped").style.display = "flex";
+        }
+    </script>
+
+</body>
+
+</html>

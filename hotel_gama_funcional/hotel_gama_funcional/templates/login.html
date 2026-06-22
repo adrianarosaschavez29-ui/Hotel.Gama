@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Hotel Gama</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <div class="login-contenedor">
+
+        <div class="login-box">
+
+            <h1>GAMA</h1>
+            <p class="subtitulo">HOTEL & SUITES · SISTEMA DE GESTIÓN</p>
+
+            <div class="tabs">
+
+                <button type="button" id="btnAdmin" class="active" onclick="cambiarRol('admin')">
+
+                    Administrador
+
+                </button>
+
+                <button type="button" id="btnCliente" onclick="cambiarRol('cliente')">
+
+                    Cliente
+
+                </button>
+
+            </div>
+
+            <form onsubmit="login(event)">
+
+                <input type="email" id="correo" placeholder="Correo electrónico" required>
+
+                <input type="password" id="password" placeholder="Contraseña" required>
+
+                <div id="camposCliente">
+
+                    <input type="text" id="dni" placeholder="DNI">
+
+                    <input type="date" id="fecha">
+
+                    <input type="tel" id="telefono" placeholder="Teléfono">
+
+                </div>
+
+                <div class="opciones">
+
+                    <label>
+                        <input type="checkbox" checked>
+                        Recordarme
+                    </label>
+
+                    <a href="#">
+                        ¿Olvidaste tu contraseña?
+                    </a>
+
+                </div>
+
+                <button type="submit" class="btn-login">
+                    INGRESAR
+                </button>
+
+            </form>
+            <div class="estrellas">★ ★ ★</div>
+
+            <p class="mensaje">
+                Bienvenido a Hotel Gama. <br>
+                Nos alegra tenerte con nosotros.
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>

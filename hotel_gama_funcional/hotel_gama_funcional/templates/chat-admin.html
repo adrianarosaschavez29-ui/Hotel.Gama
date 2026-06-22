@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chat - Hotel Gama</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="chat-page">
+
+        <aside class="chat-lista">
+            <h3>Conversaciones</h3>
+
+            <a href="/chat-admin.html" class="chat-contacto active">
+                <b>CL</b>
+                <div>
+                    <strong>Cliente Gama</strong>
+                    <p>Ver conversación...</p>
+                </div>
+            </a>
+        </aside>
+
+        <main class="chat-panel">
+
+            <div class="chat-header">
+                <div class="avatar">CL</div>
+                <div>
+                    <h3>Cliente Gama</h3>
+                    <p>Huésped · Hotel Gama</p>
+                </div>
+            </div>
+
+            <div class="chat-mensajes">
+
+                {% for m in mensajes %}
+
+                <div class="burbuja cliente">
+                    <p>{{ m.mensaje }}</p>
+                    <span>{{ m.hora }}</span>
+                </div>
+
+                {% if m.respuesta %}
+                <div class="burbuja admin">
+                    <p>{{ m.respuesta }}</p>
+                    <span>Administrador</span>
+                </div>
+                {% endif %}
+
+                {% endfor %}
+
+            </div>
+
+            <form action="/responder_chat" method="POST" class="chat-form">
+                <input type="text" name="respuesta" placeholder="Escribe una respuesta..." required>
+                <button type="submit">➤</button>
+            </form>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

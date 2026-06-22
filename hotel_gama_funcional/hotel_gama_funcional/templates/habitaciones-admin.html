@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Habitaciones - Hotel Gama</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+
+            <!-- MENÚ IZQUIERDO -->
+
+            <div class="logo">
+                <h1>GAMA</h1>
+                <p>HOTEL & SUITES</p>
+            </div>
+
+            <h4>Principal</h4>
+            <a href="admin.html">Dashboard</a>
+            <a href="reservas-admin.html">Reservas</a>
+            <a href="huespedes-admin.html">Huéspedes</a>
+            <a href="habitaciones-admin.html" class="active"> Habitaciones</a>
+
+            <h4>Operaciones</h4>
+            <a href="servicios-admin.html">Servicios</a>
+            <a href="facturacion-admin.html">Facturación</a>
+            <a href="mensajes-admin.html">Mensajes </a>
+
+            <h4>Análisis</h4>
+            <a href="reportes-admin.html">Reportes</a>
+            <a href="configuracion-admin.html">Configuración</a>
+
+        </aside>
+
+        <main class="main">
+
+            <!-- AQUÍ VA TODO EL CONTENIDO DE HABITACIONES -->
+
+            <header class="topbar">
+                <h2>Habitaciones · Hotel Gama</h2>
+            </header>
+
+            <section class="cards">
+
+                <div class="card">
+                    <h3>{{disponibles}}</h3>
+                    <p>DISPONIBLES</p>
+                </div>
+
+                <div class="card">
+                    <h3>{{ocupadas}}</h3>
+                    <p>OCUPADAS</p>
+                </div>
+
+                <div class="card">
+                    <h3>{{mantenimiento}}</h3>
+                    <p>MANTENIMIENTO</p>
+                </div>
+
+                <div class="card">
+                    <h3>{{limpieza}}</h3>
+                    <p>LIMPIEZA</p>
+                </div>
+
+            </section>
+
+            <section class="panel">
+
+                <h3>ESTADO DE HABITACIONES</h3>
+                <form action="/agregar_habitacion" method="POST" class="form-servicio">
+
+                    <input type="number" name="numero" placeholder="N° habitación" required>
+
+                    <select name="estado" required>
+                        <option value="Libre">Libre</option>
+                        <option value="Ocupada">Ocupada</option>
+                        <option value="Limpieza">Limpieza</option>
+                        <option value="Mantenimiento">Mantenimiento</option>
+                    </select>
+
+                    <button type="submit" class="btn-admin">
+                        Agregar habitación
+                    </button>
+
+                </form>
+                <div class="rooms-grid">
+
+                    {% for h in habitaciones %}
+                    <div class="room
+        {% if h.estado == 'Libre' %} libre
+        {% elif h.estado == 'Ocupada' %} ocupada
+        {% elif h.estado == 'Limpieza' %} limpieza
+        {% else %} mant
+        {% endif %}">
+
+                        <strong>{{ h.numero }}</strong>
+                        <small>{{ h.estado }}</small>
+
+                        <form action="/cambiar_estado_habitacion" method="POST">
+                            <input type="hidden" name="numero" value="{{ h.numero }}">
+
+                            <select name="estado" onchange="this.form.submit()">
+                                <option value="Libre" {% if h.estado=='Libre' %}selected{% endif %}>Libre</option>
+                                <option value="Ocupada" {% if h.estado=='Ocupada' %}selected{% endif %}>Ocupada</option>
+                                <option value="Limpieza" {% if h.estado=='Limpieza' %}selected{% endif %}>Limpieza
+                                </option>
+                                <option value="Mantenimiento" {% if h.estado=='Mantenimiento' %}selected{% endif %}>
+                                    Mantenimiento</option>
+                            </select>
+                        </form>
+
+                        <a href="/eliminar_habitacion/{{ h.numero }}" class="btn-eliminar">
+                            ✖
+                        </a>
+
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+
+
+</body>
+
+</html>

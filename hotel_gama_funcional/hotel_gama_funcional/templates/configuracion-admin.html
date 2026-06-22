@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Configuración - Hotel Gama</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>GAMA</h1>
+                <p>HOTEL & SUITES</p>
+            </div>
+
+            <h4>Principal</h4>
+            <a href="admin.html">Dashboard</a>
+            <a href="reservas-admin.html">Reservas </a>
+            <a href="huespedes-admin.html">Huéspedes</a>
+            <a href="habitaciones-admin.html">Habitaciones</a>
+
+            <h4>Operaciones</h4>
+            <a href="servicios-admin.html">Servicios</a>
+            <a href="facturacion-admin.html">Facturación</a>
+            <a href="mensajes-admin.html">Mensajes </a>
+
+            <h4>Análisis</h4>
+            <a href="reportes-admin.html">Reportes</a>
+            <a href="configuracion-admin.html" class="active">Configuración</a>
+
+            <div class="user">
+                <div class="avatar">AR</div>
+                <p>Admin Gama<br><small>Administrador</small></p>
+            </div>
+        </aside>
+
+        <main class="main">
+
+            <header class="topbar">
+                <h2><span>Configuración</span> · Hotel Gama</h2>
+
+                <div class="top-actions">
+                    <small>sábado, 20 de junio</small>
+                    <a href="login.html">Salir</a>
+                </div>
+            </header>
+
+            <section class="config-grid">
+
+                <div class="panel">
+                    <h3>DATOS DEL HOTEL</h3>
+
+                    <form action="/guardar_datos_hotel" method="POST">
+
+                        <label>Nombre del hotel</label>
+                        <input type="text" name="nombre" value="{{ datos_hotel.nombre }}">
+
+                        <label>Dirección</label>
+                        <input type="text" name="direccion" value="{{ datos_hotel.direccion }}">
+
+                        <label>Teléfono</label>
+                        <input type="text" name="telefono" value="{{ datos_hotel.telefono }}">
+
+                        <button type="submit" class="btn-admin">
+                            Guardar cambios
+                        </button>
+
+                    </form>
+                </div>
+
+                <div class="panel">
+                    <h3>USUARIOS DEL SISTEMA</h3>
+
+                    <table>
+                        <tr>
+                            <th>USUARIO</th>
+                            <th>ROL</th>
+                            <th>ESTADO</th>
+                            <th>ACCIONES</th>
+                        </tr>
+
+                        {% for u in usuarios %}
+                        <tr>
+                            <td>{{ u.correo }}</td>
+                            <td>{{ u.rol }}</td>
+
+                            <td>
+                                <span class="estado activo">
+                                    {{ u.estado }}
+                                </span>
+                            </td>
+
+                            <td>
+                                <a href="/eliminar_usuario/{{ loop.index0 }}" class="btn-eliminar"
+                                    onclick="return confirm('¿Eliminar usuario?')">
+                                    Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+
+                    <br>
+
+                    <button onclick="mostrarUsuario()">
+                        + Agregar usuario
+                    </button>
+
+                    <form id="formUsuario" action="/agregar_usuario" method="POST"
+                        style="display:none;margin-top:15px;">
+
+                        <input type="email" name="correo" placeholder="Correo" required>
+
+                        <select name="rol">
+                            <option>Administrador</option>
+                            <option>Recepcionista</option>
+                            <option>Gerente</option>
+                            <option>Técnico</option>
+                            <option>Limpieza</option>
+                            <option>Seguridad</option>
+                            <option>Supervisor</option>
+                            <option>Contador</option>
+                            <option>Encargado Spa</option>
+
+                        </select>
+
+                        <button type="submit">
+                            Guardar usuario
+                        </button>
+
+                    </form>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        function mostrarUsuario() {
+            let f = document.getElementById("formUsuario");
+
+            if (f.style.display == "none") {
+                f.style.display = "block";
+            } else {
+                f.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

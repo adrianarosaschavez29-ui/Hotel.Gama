@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Responder mensaje</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <section class="panel">
+
+            <h3>RESPONDER MENSAJE</h3>
+
+            <p><b>Cliente:</b> {{ mensaje.nombre }}</p>
+            <p><b>Habitación:</b> {{ mensaje.habitacion }}</p>
+            <p><b>Mensaje:</b> {{ mensaje.mensaje }}</p>
+
+            <form action="/responder_mensaje/{{ mensaje.id }}" method="POST">
+                <textarea name="respuesta" required
+                    style="width:100%;height:120px;background:#111;color:#d6ad35;border:1px solid #5b4516;border-radius:8px;padding:10px;">{{ mensaje.respuesta }}</textarea>
+
+                <br><br>
+
+                <button type="submit" class="btn-admin">
+                    Responder
+                </button>
+            </form>
+
+            <br>
+            <a href="/mensajes-admin.html" class="btn-admin">Volver</a>
+
+        </section>
+    </div>
+
+</body>
+
+</html>

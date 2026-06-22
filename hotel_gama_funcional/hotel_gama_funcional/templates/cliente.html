@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cliente - Hotel Gama</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>GAMA</h1>
+                <p>HOTEL & SUITES</p>
+            </div>
+            <h4>Cliente</h4>
+            <a class="active" href="cliente.html">Mi panel</a>
+            <a href="reserva.html">Nueva reserva</a>
+            <a href="index.html">Página principal</a>
+            <a href="login.html">Cerrar sesión</a>
+            <div class="user">
+                <div class="avatar">CL</div>
+                <p>Cliente Gama<br><small>Huésped</small></p>
+            </div>
+        </aside>
+        <main class="main">
+            <header class="topbar">
+                <h2><span>Cliente</span> · Hotel Gama</h2>
+                <div class="top-actions"><a href="login.html">Salir</a></div>
+            </header>
+
+
+            <section class="panel">
+                <h3>BIENVENIDO CLIENTE</h3>
+
+                <p>
+                    Desde aquí puedes reservar habitaciones, consultar tu información
+                    y enviar mensajes al Hotel Gama.
+                </p>
+
+                <br>
+
+                <a class="btn-admin" href="reserva.html">
+                    Reservar ahora
+                </a>
+            </section>
+
+            <section class="panel">
+                <h3>MIS RESERVAS</h3>
+
+                <div class="reservas-cliente">
+
+                    {% for r in reservas %}
+                    <div class="reserva-card">
+                        <h4>{{ r.habitacion }}</h4>
+                        <p><b>Cliente:</b> {{ r.nombre }}</p>
+                        <p><b>DNI:</b> {{ r.dni }}</p>
+                        <p><b>Teléfono:</b> {{ r.telefono }}</p>
+                        <p><b>Correo:</b> {{ r.correo }}</p>
+                        <p><b>Entrada:</b> {{ r.entrada }}</p>
+                        <p><b>Salida:</b> {{ r.salida }}</p>
+                        <p><b>Total:</b> S/{{ r.precio }}</p>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </section>
+
+            <section class="panel">
+                <h3>ENVIAR MENSAJE AL HOTEL</h3>
+
+                <form action="/enviar_mensaje" method="POST" class="form-servicio">
+
+                    <input type="text" name="nombre" placeholder="Tu nombre" required>
+
+                    <input type="text" name="habitacion" placeholder="Habitación" required>
+
+                    <input type="text" name="mensaje" placeholder="Escribe tu mensaje" required>
+
+                    <button type="submit" class="btn-admin">
+                        Enviar mensaje
+                    </button>
+
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reportes - Hotel Gama</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>GAMA</h1>
+                <p>HOTEL & SUITES</p>
+            </div>
+
+            <h4>Principal</h4>
+            <a href="admin.html">Dashboard</a>
+            <a href="reservas-admin.html">Reservas </a>
+            <a href="huespedes-admin.html">Huéspedes</a>
+            <a href="habitaciones-admin.html">Habitaciones</a>
+
+            <h4>Operaciones</h4>
+            <a href="servicios-admin.html">Servicios</a>
+            <a href="facturacion-admin.html">Facturación</a>
+            <a href="mensajes-admin.html">Mensajes </a>
+
+            <h4>Análisis</h4>
+            <a href="reportes-admin.html" class="active">Reportes</a>
+            <a href="configuracion-admin.html">Configuración</a>
+
+            <div class="user">
+                <div class="avatar">AR</div>
+                <p>Admin Gama<br><small>Administrador</small></p>
+            </div>
+        </aside>
+
+        <main class="main">
+
+
+            <header class="topbar">
+                <h2><span>Reportes</span> · Hotel Gama</h2>
+
+                <div class="top-actions">
+                    <small>sábado, 20 de junio</small>
+                    <a href="login.html">Salir</a>
+                </div>
+            </header>
+
+            <section class="cards">
+                <div class="card">
+                    <h3>S/{{ ingresos }}</h3>
+                    <p>INGRESOS TOTALES</p>
+                </div>
+
+                <div class="card">
+                    <h3>{{ total_reservas }}</h3>
+                    <p>RESERVAS</p>
+                </div>
+
+                <div class="card">
+                    <h3>{{ total_huespedes }}</h3>
+                    <p>HUÉSPEDES</p>
+                </div>
+
+                <div class="card">
+                    <h3>{{ total_mensajes }}</h3>
+                    <p>MENSAJES</p>
+                </div>
+            </section>
+
+            <section class="reportes-grid">
+
+                <div class="panel">
+                    <h3>RESUMEN DEL SISTEMA</h3>
+
+                    <div class="grafico-barras">
+                        <div class="barra-mes" style="height:80px;">
+                            <span>{{ ingresos }}</span>
+                            <p>Ingresos</p>
+                        </div>
+
+                        <div class="barra-mes" style="height:60px;">
+                            <span>{{ total_reservas }}</span>
+                            <p>Reservas</p>
+                        </div>
+
+                        <div class="barra-mes" style="height:50px;">
+                            <span>{{ total_huespedes }}</span>
+                            <p>Huéspedes</p>
+                        </div>
+
+                        <div class="barra-mes" style="height:40px;">
+                            <span>{{ total_mensajes }}</span>
+                            <p>Mensajes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>ACTIVIDAD DEL HOTEL</h3>
+
+                    <div class="satisfaccion">
+                        <p>Reservas <b>{{ total_reservas }}</b></p>
+                        <div class="linea"><span style="width:80%;"></span></div>
+
+                        <p>Huéspedes <b>{{ total_huespedes }}</b></p>
+                        <div class="linea"><span style="width:70%;"></span></div>
+
+                        <p>Mensajes <b>{{ total_mensajes }}</b></p>
+                        <div class="linea"><span style="width:60%;"></span></div>
+
+                        <p>Ingresos <b>S/{{ ingresos }}</b></p>
+                        <div class="linea"><span style="width:90%;"></span></div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+</body>
+
+</html>
