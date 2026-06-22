@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.65)),
+    url("ChatGPT\ Image\ 19\ jun\ 2026\,\ 00_47_09.png");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-box{
+    width:560px;
+    background:rgba(10,10,10,.92);
+    border:1px solid #d6ad35;
+    border-radius:18px;
+    padding:35px 45px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(0,0,0,.7);
+}
+
+.login-box h1{
+    font-family:Georgia, serif;
+    color:#d6ad35;
+    font-size:70px;
+    letter-spacing:18px;
+}
+
+.subtitulo{
+    color:#d6ad35;
+    letter-spacing:3px;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.tabs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    border:1px solid #8b6b22;
+    border-radius:8px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.tabs button{
+    padding:18px;
+    background:#111;
+    color:#d6ad35;
+    border:none;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.tabs button.active{
+    background:#d6ad35;
+    color:#000;
+}
+
+form input{
+    width:100%;
+    padding:18px;
+    margin-bottom:14px;
+    background:#111;
+    border:1px solid #8b6b22;
+    border-radius:8px;
+    color:#d6ad35;
+    font-size:16px;
+    outline:none;
+}
+
+form input::placeholder{
+    color:#b8b8b8;
+}
+
+.opciones{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:10px 0 22px;
+    color:#d6ad35;
+    font-size:14px;
+}
+
+.opciones a{
+    color:#d6ad35;
+    text-decoration:none;
+}
+
+.btn-login{
+    width:100%;
+    padding:18px;
+    background:#d6ad35;
+    color:#000;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:20px;
+    letter-spacing:4px;
+    cursor:pointer;
+}
+
+.btn-login:hover{
+    background:#ffd34d;
+}
+
+.estrellas{
+    color:#d6ad35;
+    font-size:24px;
+    margin:25px 0 15px;
+}
+
+.mensaje{
+    color:#d6ad35;
+    font-size:18px;
+    line-height:1.5;
+}
+
+#camposCliente{
+    display:none;
+}
+
+#camposCliente input{
+    margin-bottom:15px;
+}
