@@ -1,0 +1,105 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.65)),
+    url("ChatGPT\ Image\ 19\ jun\ 2026\,\ 00_47_09.png");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-box{
+    width:560px;
+    background:rgba(10,10,10,.92);
+    border:1px solid #d6ad35;
+    border-radius:18px;
+    padding:40px 45px;
+    text-align:center;
+}
+
+.login-box h1{
+    color:#d6ad35;
+    font-family:Georgia, serif;
+    font-size:70px;
+    letter-spacing:18px;
+}
+
+.subtitulo{
+    color:#d6ad35;
+    letter-spacing:3px;
+    font-size:14px;
+    margin-bottom:35px;
+}
+
+.tabs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    border:1px solid #8b6b22;
+    border-radius:8px;
+    overflow:hidden;
+    margin-bottom:35px;
+}
+
+.tabs button{
+    height:62px;
+    border:none;
+    background:#111;
+    color:#d6ad35;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.tabs button.active{
+    background:#d6ad35;
+    color:#000;
+}
+
+input{
+    width:100%;
+    padding:18px;
+    margin-bottom:24px;
+    background:#111;
+    border:1px solid #8b6b22;
+    border-radius:8px;
+    color:#d6ad35;
+    font-size:16px;
+}
+
+input::placeholder{
+    color:#bbb;
+}
+
+form button{
+    width:100%;
+    padding:20px;
+    background:#d6ad35;
+    color:#000;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:22px;
+    letter-spacing:5px;
+    cursor:pointer;
+}
+
+.estrellas{
+    color:#d6ad35;
+    font-size:25px;
+    margin:30px 0 18px;
+}
+
+.nota{
+    color:#b99745;
+    font-size:18px;
+    line-height:1.5;
+}

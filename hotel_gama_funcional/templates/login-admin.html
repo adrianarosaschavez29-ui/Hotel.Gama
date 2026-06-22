@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Administrador - Hotel Gama</title>
+    <link rel="stylesheet" href="css/login-admin.css">
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <h1>GAMA</h1>
+        <p class="subtitulo">HOTEL & SUITES · SISTEMA DE GESTIÓN</p>
+
+        <div class="tabs">
+
+           <button type="button" onclick="window.location.href='login.html'">
+                Administrador
+            </button> 
+            <button type="button" class="active">
+                Cliente
+            </button>
+
+            
+
+        </div>
+
+        <form onsubmit="loginAdmin(event)">
+
+            <input type="email" id="correo" placeholder="Correo electrónico" required>
+
+            <input type="password" id="password" placeholder="Contraseña" required>
+
+            <button type="submit">INGRESAR</button>
+
+        </form>
+
+        <div class="estrellas">★ ★ ★</div>
+
+        <p class="nota">
+            Acceso para administradores y personal del hotel Gama. <br>
+            Solo usuarios autorizados.
+        </p>
+
+    </div>
+
+    <script src="js/login-admin.js"></script>
+</body>
+
+</html>

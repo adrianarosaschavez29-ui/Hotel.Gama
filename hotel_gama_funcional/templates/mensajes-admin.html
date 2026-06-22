@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mensajes - Hotel Gama</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>GAMA</h1>
+                <p>HOTEL & SUITES</p>
+            </div>
+
+            <h4>Principal</h4>
+            <a href="admin.html">Dashboard</a>
+            <a href="reservas-admin.html">Reservas </a>
+            <a href="huespedes-admin.html">Huéspedes</a>
+            <a href="habitaciones-admin.html">Habitaciones</a>
+
+            <h4>Operaciones</h4>
+
+            <a href="servicios-admin.html">Servicios</a>
+            <a href="facturacion-admin.html">Facturación</a>
+            <a href="chat-admin.html" class="active">Mensajes</a>
+
+            <h4>Análisis</h4>
+            <a href="reportes-admin.html">Reportes</a>
+            <a href="configuracion-admin.html">Configuración</a>
+
+            <div class="user">
+                <div class="avatar">AR</div>
+                <p>Admin Gama<br><small>Administrador</small></p>
+            </div>
+        </aside>
+
+        <main class="main">
+
+            <header class="topbar">
+                <h2><span>Mensajes</span> · Hotel Gama</h2>
+
+                <div class="top-actions">
+                    <small>sábado, 20 de junio</small>
+                    <a href="login.html">Salir</a>
+                </div>
+            </header>
+
+            <section class="panel mensajes-panel">
+
+                <h3>BANDEJA DE MENSAJES</h3>
+                {% for m in mensajes %}
+
+                <div class="msg">
+
+                    <b>{{ m.nombre[:2] }}</b>
+
+                    <div>
+                        <a href="/chat-admin.html">
+                            <strong>{{ m.nombre }} - Hab. {{ m.habitacion }}</strong>
+                        </a>
+                        <p>{{ m.mensaje }}</p>
+                    </div>
+
+                    <span>{{ m.hora }}</span>
+
+                </div>
+
+                {% endfor %}
+            </section>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

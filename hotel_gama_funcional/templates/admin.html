@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Admin - Hotel Gama</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <h1>GAMA</h1>
+            <p>HOTEL & SUITES</p>
+
+            <h4>Principal</h4>
+            <a href="admin.html">Dashboard</a>
+            <a href="reservas-admin.html">Reservas </a>
+            <a href="huespedes-admin.html">Huéspedes</a>
+            <a href="habitaciones-admin.html">Habitaciones</a>
+
+
+            <h4>Operaciones</h4>
+            <a href="servicios-admin.html">Servicios</a>
+            <a href="facturacion-admin.html">Facturación</a>
+            <a href="mensajes-admin.html">Mensajes </a>
+
+            <h4>Análisis</h4>
+            <a href="reportes-admin.html">Reportes</a>
+            <a href="configuracion-admin.html">Configuración</a>
+
+            <div class="user">
+                <div>AR</div>
+                <p>Admin Gama<br><small>Administrador</small></p>
+            </div>
+        </aside>
+
+        <main class="main">
+
+            <header>
+                <h2><span>Dashboard</span> · Hotel Gama</h2>
+                <div>
+                    <small>{{ fecha_actual }}</small>
+                    <a href="index.html">Salir</a>
+
+                </div>
+            </header>
+
+            <section class="cards">
+                <div class="card">
+                    <h3>84%</h3>
+                    <p>OCUPACIÓN</p><small>↑ +6% vs ayer</small>
+                </div>
+                <div class="card">
+                    <h3>{{ total_reservas }}</h3>
+                    <p>RESERVAS ACTIVAS</p><small>↑ 3 nuevas hoy</small>
+                </div>
+                <div class="card">
+                    <h3>S/{{ ingresos }}</h3>
+                    <p>INGRESOS DEL DÍA</p><small class="red">↓ -2% vs ayer</small>
+                </div>
+                <div class="card">
+                    <h3>4.8</h3>
+                    <p>CALIFICACIÓN</p><small>↑ +0.1 este mes</small>
+                </div>
+            </section>
+
+            <section class="grid">
+
+                <div class="panel">
+                    <h3>RESERVAS RECIENTES</h3>
+                    <table>
+
+                        <tr>
+                            <th>HUÉSPED</th>
+                            <th>HAB.</th>
+                            <th>ENTRADA</th>
+                            <th>ESTADO</th>
+                        </tr>
+
+                        {% for r in reservas %}
+                        <tr>
+                            <td>{{ r.nombre }}</td>
+                            <td>{{ r.habitacion }}</td>
+                            <td>{{ r.entrada }}</td>
+                            <td>
+                                <span class="pend">Pendiente</span>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+
+                <div class="panel">
+                    <h3>OCUPACIÓN POR TIPO</h3>
+
+                    <div class="bar">
+                        <p>Suites Presidenciales <b>92%</b></p><span style="width:92%"></span>
+                    </div>
+                    <div class="bar">
+                        <p>Habitaciones Deluxe <b>78%</b></p><span style="width:78%"></span>
+                    </div>
+                    <div class="bar">
+                        <p>Estándar Doble <b>85%</b></p><span style="width:85%"></span>
+                    </div>
+                    <div class="bar">
+                        <p>Estándar Simple <b>61%</b></p><span style="width:61%"></span>
+                    </div>
+                    <div class="bar">
+                        <p>Habitaciones Familia <b>74%</b></p><span style="width:74%"></span>
+                    </div>
+                </div>
+
+            </section>
+
+            
+
+        </main>
+    </div>
+
+</body>
+
+</html>

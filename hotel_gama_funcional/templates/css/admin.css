@@ -1,0 +1,1024 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body {
+    background: #050505;
+    color: #d6ad35;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+.sidebar {
+    width:220px;
+    position:relative;
+    background: #111;
+    border-right: 1px solid #5b4516;
+    padding: 18px 10px;
+}
+
+.sidebar h1{
+    font-family:'Times New Roman', serif;
+    letter-spacing:6px;
+    color:#d6ad35;
+    font-size:36px;
+    font-weight:600;
+}
+
+.sidebar p {
+    color: #8f6f20;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.sidebar h4 {
+    margin: 35px 6px 8px;
+    color: #8f6f20;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 38px;
+    color: #d6ad35;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size:13px;
+    font-weight:500;
+    position: relative;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+    background: #2b2618;
+    border: 1px solid #8b6b22;
+}
+
+.sidebar span {
+    background: #d6ad35;
+    color: #000;
+    padding: 2px 7px;
+    border-radius: 10px;
+    float: right;
+    font-size: 11px;
+}
+
+.user {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.user div {
+    border: 1px solid #d6ad35;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.main {
+    flex: 1;
+    padding: 0 25px 25px;
+}
+
+header {
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #5b4516;
+}
+
+header h2 {
+    color: white;
+    font-size: 18px;
+}
+
+header h2 span {
+    color: #d6ad35;
+}
+
+header a,
+header button {
+    background: #d6ad35;
+    color: #000;
+    padding: 9px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 0 0 20px;
+}
+
+.card,
+.panel {
+    background: #1a1a1a;
+    border: 1px solid #5b4516;
+    border-radius: 9px;
+    padding: 18px;
+}
+
+.card h3{
+    color:white;
+    font-size:34px;
+    font-weight:700;
+}
+
+.card p {
+    color: #8f6f20;
+    font-size: 12px;
+}
+
+.card small {
+    color: #57d889;
+}
+
+.red {
+    color: #ff5757 !important;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.panel h3{
+    color:#ffd34d;
+    letter-spacing:3px;
+    font-size:15px;
+    font-weight:600;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+th,
+td {
+    padding: 8px;
+    border-bottom: 1px solid #2d2617;
+    text-align: left;
+}
+
+th {
+    color: #8f6f20;
+    text-transform: uppercase;
+}
+
+.ok,
+.pend,
+.out {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+}
+
+.ok {
+    color: #57d889;
+    border: 1px solid #57d889
+}
+
+.pend {
+    color: #ffd34d;
+    border: 1px solid #8b6b22
+}
+
+.out {
+    color: #ff6b6b;
+    border: 1px solid #7a2c2c
+}
+
+.bar {
+    margin-bottom: 12px;
+}
+
+.bar p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.bar::after {
+    content: "";
+    display: block;
+    height: 5px;
+    background: #292514;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.bar span {
+    display: block;
+    height: 5px;
+    background: #d6ad35;
+    border-radius: 10px;
+    margin-top: -5px;
+}
+
+.mensajes {
+    margin-top: 16px;
+}
+
+.msg {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #2d2617;
+    padding: 10px 0;
+}
+
+.msg b {
+    border: 1px solid #8b6b22;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.msg p {
+    flex: 1;
+    color: #8f6f20;
+    font-size: 12px;
+}
+
+.msg strong {
+    color: white;
+}
+
+.msg span {
+    font-size: 11px;
+    color: #8f6f20;
+}
+
+
+/* HUESPEDES PANEL */
+
+.reservas-panel{
+    margin-top:25px;
+}
+
+.acciones-tabla{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.acciones-tabla button{
+    background:#d6ad35;
+    color:#000;
+    border:none;
+    padding:10px 18px;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.acciones-tabla .outline{
+    background:transparent;
+    color:#d6ad35;
+    border:1px solid #8b6b22;
+}
+
+.huespedes-panel {
+    margin-top: 20px;
+}
+
+.acciones-tabla input {
+    width: 220px;
+    padding: 10px 14px;
+    background: #1c1b16;
+    border: 1px solid #5b4516;
+    color: #d6ad35;
+    border-radius: 6px;
+    outline: none;
+}
+
+.acciones-tabla input::placeholder {
+    color: #8f6f20;
+}
+
+/* HABITACIONES PANEL */
+
+.habitaciones-panel{
+    margin-top:18px;
+}
+
+
+.btn-admin{
+    background:#d6ad35;
+    color:#000;
+    padding:10px 18px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:12px;
+}
+
+/* SERVICIOS ADMIN */
+
+.servicios-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    padding:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    text-align:left;
+    color:#8f6f20;
+    font-size:11px;
+    padding:10px 0;
+    border-bottom:1px solid #3d3314;
+}
+
+td{
+    padding:12px 0;
+    border-bottom:1px solid #242424;
+    color:#d6ad35;
+    font-size:13px;
+}
+
+.estado{
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.activo{
+    background:#163528;
+    color:#57d889;
+}
+
+.pendiente{
+    background:#3b3112;
+    color:#ffd34d;
+}
+
+/******** FACTURACIÓN ********/
+
+.facturacion-panel{
+    margin-top:20px;
+}
+
+.top-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.top-actions small{
+    color:#8f6f20;
+}
+
+.top-actions a{
+    background:transparent;
+    border:1px solid #8b6b22;
+    color:#d6ad35;
+    padding:8px 15px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:12px;
+}
+
+.top-actions button{
+    background:#d6ad35;
+    color:#000;
+    border:none;
+    padding:8px 15px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.facturacion-panel table tr:hover{
+    background:#222;
+}
+
+/* MENSAJES PANEL */
+.mensajes-panel{
+    margin-top:20px;
+}
+
+.mensaje-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 0;
+    border-bottom:1px solid #2d2617;
+}
+
+.mensaje-item:last-child{
+    border-bottom:none;
+}
+
+.mensaje-item b{
+    width:28px;
+    height:28px;
+    border:1px solid #8b6b22;
+    background:#2b2618;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:11px;
+    color:#d6ad35;
+}
+
+.mensaje-item p{
+    flex:1;
+    color:#8f6f20;
+    font-size:11px;
+}
+
+.mensaje-item strong{
+    color:white;
+    font-size:12px;
+}
+
+.mensaje-item span{
+    color:#8f6f20;
+    font-size:11px;
+}
+
+/* REPORTES PANEL */
+
+.reportes-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:20px;
+}
+
+.grafico-barras{
+    height:120px;
+    display:flex;
+    align-items:end;
+    gap:10px;
+    padding-top:15px;
+}
+
+.barra-mes{
+    flex:1;
+    background:linear-gradient(#d6ad35,#8b6b22);
+    border-radius:4px 4px 0 0;
+    position:relative;
+    text-align:center;
+}
+
+.barra-mes span{
+    position:absolute;
+    top:-18px;
+    left:0;
+    right:0;
+    color:#ffd34d;
+    font-size:11px;
+}
+
+.barra-mes p{
+    position:absolute;
+    bottom:-22px;
+    left:0;
+    right:0;
+    color:#8f6f20;
+    font-size:11px;
+}
+
+.satisfaccion p{
+    display:flex;
+    justify-content:space-between;
+    color:#d6ad35;
+    font-size:12px;
+    margin:13px 0 5px;
+}
+
+.linea{
+    height:5px;
+    background:#292514;
+    border-radius:20px;
+}
+
+.linea span{
+    display:block;
+    height:5px;
+    background:#d6ad35;
+    border-radius:20px;
+}
+
+/* CONFIGURACION PANEL */
+.config-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:20px;
+}
+
+.config-grid label{
+    display:block;
+    color:#8f6f20;
+    font-size:11px;
+    margin:12px 0 6px;
+}
+
+.config-grid input{
+    width:100%;
+    padding:12px;
+    background:#1c1b16;
+    border:1px solid #5b4516;
+    border-radius:6px;
+    color:white;
+    outline:none;
+}
+
+.config-grid input:focus{
+    border-color:#d6ad35;
+}
+
+.config-grid .btn-admin{
+    margin-top:10px;
+    border:none;
+    cursor:pointer;
+}
+
+/* AJUSTES FINALES */
+.sidebar h5{
+    margin:35px 6px 8px;
+    color:#8f6f20;
+    font-size:10px;
+    letter-spacing:3px;
+}
+.logo h1, .sidebar h1{
+    font-family:'Times New Roman', Georgia, serif;
+}
+.topbar, header{
+    height:56px;
+}
+.top-right, .top-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.top-right span, .top-actions small{
+    color:#8f6f20;
+    font-size:12px;
+}
+.btn-outline{
+    background:transparent !important;
+    border:1px solid #8b6b22 !important;
+    color:#d6ad35 !important;
+}
+.btn-gold{
+    background:#d6ad35 !important;
+    color:#000 !important;
+}
+.btn-reservar{
+    background:#d6ad35;
+    color:#000;
+    border:none;
+    padding:6px 12px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:11px;
+}
+.room{ cursor:pointer; }
+.room:hover{ transform:scale(1.02); }
+@media(max-width:900px){
+    .cards,.grid,.servicios-grid,.reportes-grid,.config-grid{grid-template-columns:1fr;}
+    .rooms-grid{grid-template-columns:repeat(auto-fit,minmax(100px,1fr));}
+}
+
+.reserva-card{
+    background:#1a1a1a;
+    border:1px solid #5b4516;
+    border-radius:8px;
+    padding:15px;
+    margin-top:10px;
+}
+
+.reserva-card h4{
+    color:#ffd34d;
+    margin-bottom:10px;
+}
+
+.reserva-card p{
+    color:white;
+    margin:4px 0;
+}
+
+
+
+.reservas-cliente{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:15px;
+    margin-top:15px;
+}
+
+.reserva-card{
+    background:#111;
+    border:1px solid #5b4516;
+    border-radius:10px;
+    padding:18px;
+}
+
+.reserva-card h4{
+    color:#ffd34d;
+    font-size:18px;
+    margin-bottom:12px;
+}
+
+.reserva-card p{
+    color:white;
+    margin:6px 0;
+    font-size:14px;
+}
+
+.reserva-card b{
+    color:#d6ad35;
+}
+
+
+.form-servicio{
+    display:none;
+    gap:10px;
+    margin-top:15px;
+}
+
+.form-servicio input,
+.form-servicio select{
+    background:#1c1b16;
+    border:1px solid #5b4516;
+    color:#d6ad35;
+    padding:10px;
+    border-radius:6px;
+    outline:none;
+}
+
+.form-servicio{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.form-servicio input{
+    background:#111;
+    border:1px solid #5b4516;
+    color:#d6ad35;
+    padding:10px;
+    border-radius:6px;
+}
+
+.form-servicio input::placeholder{
+    color:#8f6f20;
+}
+
+
+.chat-page{
+    display:grid;
+    grid-template-columns:260px 1fr;
+    height:100vh;
+    background:#050505;
+    color:#d6ad35;
+}
+
+.chat-lista{
+    border-right:1px solid #2d2617;
+    padding:18px;
+    background:#0b0b0b;
+}
+
+.chat-lista h3{
+    margin-bottom:20px;
+}
+
+.chat-contacto{
+    display:flex;
+    gap:12px;
+    padding:15px;
+    border-radius:10px;
+    text-decoration:none;
+    color:#d6ad35;
+}
+
+.chat-contacto.active{
+    background:#2b2618;
+}
+
+.chat-contacto b,
+.avatar{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#222;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#d6ad35;
+}
+
+.chat-contacto p,
+.chat-header p{
+    color:#8f6f20;
+    font-size:12px;
+}
+
+.chat-panel{
+    display:flex;
+    flex-direction:column;
+}
+
+.chat-header{
+    height:75px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:0 25px;
+    border-bottom:1px solid #2d2617;
+    background:#0b0b0b;
+}
+
+.chat-mensajes{
+    flex:1;
+    padding:25px;
+    overflow-y:auto;
+}
+
+.burbuja{
+    max-width:45%;
+    padding:13px 16px;
+    border-radius:12px;
+    margin-bottom:18px;
+}
+
+.burbuja p{
+    color:white;
+}
+
+.burbuja span{
+    display:block;
+    color:#8f6f20;
+    font-size:11px;
+    margin-top:6px;
+}
+
+.burbuja.cliente{
+    background:#1a1a1a;
+    border:1px solid #333;
+}
+
+.burbuja.admin{
+    background:#d6ad35;
+    margin-left:auto;
+}
+
+.burbuja.admin p{
+    color:#000;
+}
+
+.chat-form{
+    display:flex;
+    gap:10px;
+    padding:14px;
+    border-top:1px solid #2d2617;
+}
+
+.chat-form input{
+    flex:1;
+    background:#1a1a1a;
+    border:1px solid #333;
+    color:white;
+    padding:14px;
+    border-radius:8px;
+}
+
+.chat-form button{
+    width:50px;
+    background:#d6ad35;
+    border:none;
+    border-radius:8px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+#formUsuario{
+    display:none;
+    margin-top:15px;
+    gap:10px;
+    align-items:center;
+}
+
+#formUsuario input,
+#formUsuario select{
+    background:#111;
+    border:1px solid #5b4516;
+    color:#d6ad35;
+    padding:10px;
+    border-radius:6px;
+    outline:none;
+}
+
+#formUsuario input::placeholder{
+    color:#8f6f20;
+}
+
+#formUsuario button,
+.config-grid button{
+    background:#d6ad35;
+    color:#000;
+    border:none;
+    padding:10px 16px;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#formUsuario button:hover,
+.config-grid button:hover{
+    background:#ffd34d;
+}
+
+.btn-eliminar{
+    background:#b22222;
+    color:white;
+    padding:6px 12px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:12px;
+}
+
+.btn-eliminar:hover{
+    background:#d62828;
+}
+
+.rooms-grid{
+    margin-top:18px;
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:8px;
+}
+
+.room{
+    height: 70px;
+    padding:6px;
+    border-radius:7px;
+    position:relative;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.room strong{
+    font-size:14px;
+    margin-bottom:2px;
+}
+
+.room small{
+    font-size:9px;
+    margin-bottom:3px;
+}
+
+.room form{
+    width:70%;
+}
+
+.room select{
+    width:75%;
+    height:22px;
+    background:#1b1a12;
+    color:#ffd34d;
+    border:1px solid #8b6b22;
+    border-radius:12px;
+    font-size:9px;
+    font-weight:bold;
+    text-align:center;
+    padding:2px 8px;
+    outline:none;
+    cursor:pointer;
+}
+
+.room select:hover{
+    background:#2b2618;
+    border-color:#d6ad35;
+}
+
+.room select:focus{
+    box-shadow:0 0 6px rgba(214,173,53,0.6);
+}
+
+.btn-eliminar{
+    position:absolute;
+    top:6px;
+    right:6px;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#a11d1d,#d63a3a);
+    color:white;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:bold;
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 2px 8px rgba(214,58,58,0.4);
+    transition:all .3s ease;
+}
+
+.btn-eliminar:hover{
+    transform:scale(1.15);
+    box-shadow:0 4px 12px rgba(214,58,58,0.7);
+    background:linear-gradient(135deg,#c62828,#ff5252);
+}
+
+.room.libre{
+    background:#142c20;
+    border:1px solid #2c8a5d;
+    color:#57d889;
+}
+
+.room.ocupada{
+    background:#2f2917;
+    border:1px solid #8b6b22;
+    color:#ffd34d;
+}
+
+.room.limpieza{
+    background:#18263d;
+    border:1px solid #4267b2;
+    color:#6fa8ff;
+}
+
+.room.mant{
+    background:#321919;
+    border:1px solid #7a2c2c;
+    color:#ff7777;
+}
+
+#formReserva{
+    background:#111;
+    border:1px solid #5b4516;
+    border-radius:10px;
+    padding:15px;
+    margin:15px 0;
+}
+
+#formReserva .form-servicio{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:12px;
+}
+
+#formReserva input,
+#formReserva select{
+    width:100%;
+    background:#0b0b0b;
+    border:1px solid #6e5312;
+    color:#d6ad35;
+    padding:12px;
+    border-radius:8px;
+    outline:none;
+}
+
+#formReserva input::placeholder{
+    color:#8f6f20;
+}
+
+#formReserva button{
+    background:#d6ad35;
+    color:#000;
+    border:none;
+    border-radius:8px;
+    padding:12px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#formReserva button:hover{
+    background:#f0c84d;
+}

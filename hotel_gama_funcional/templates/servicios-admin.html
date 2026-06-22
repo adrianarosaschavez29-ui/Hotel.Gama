@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Servicios - Hotel Gama</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>GAMA</h1>
+                <p>HOTEL & SUITES</p>
+            </div>
+
+            <h4>Principal</h4>
+            <a href="admin.html">Dashboard</a>
+            <a href="reservas-admin.html">Reservas</a>
+            <a href="huespedes-admin.html">Huéspedes</a>
+            <a href="habitaciones-admin.html">Habitaciones</a>
+
+            <h4>Operaciones</h4>
+            <a href="servicios-admin.html" class="active">Servicios</a>
+            <a href="facturacion-admin.html">Facturación</a>
+            <a href="mensajes-admin.html">Mensajes</a>
+
+            <h4>Análisis</h4>
+            <a href="reportes-admin.html">Reportes</a>
+            <a href="configuracion-admin.html">Configuración</a>
+        </aside>
+
+        <main class="main">
+
+            <header class="topbar">
+                <h2><span>Servicios</span> · Hotel Gama</h2>
+                <div class="top-actions">
+                    <small>sábado, 20 de junio</small>
+                    <a href="login.html">Salir</a>
+                </div>
+            </header>
+
+            <div class="servicios-grid">
+
+                <div class="panel">
+                    <h3>SERVICIOS DISPONIBLES</h3>
+
+                    <table>
+                        <tr>
+                            <th>SERVICIO</th>
+                            <th>CATEGORÍA</th>
+                            <th>PRECIO</th>
+                            <th>ESTADO</th>
+                        </tr>
+
+                        <tr>
+                            <td>Spa & Wellness</td>
+                            <td>Bienestar</td>
+                            <td>S/180</td>
+                            <td><span class="estado activo">Activo</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Room Service 24h</td>
+                            <td>Alimentación</td>
+                            <td>Incluido</td>
+                            <td><span class="estado activo">Activo</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Piscina Infinity</td>
+                            <td>Recreación</td>
+                            <td>Incluido</td>
+                            <td><span class="estado activo">Activo</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Transfer Aeropuerto</td>
+                            <td>Transporte</td>
+                            <td>S/80</td>
+                            <td><span class="estado activo">Activo</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Sala de Conferencias</td>
+                            <td>Negocios</td>
+                            <td>S/350/h</td>
+                            <td>
+                                <button type="button" class="btn-admin" onclick="abrirServicio()">
+                                    Reservar
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <form action="/solicitar_servicio" method="POST" id="formServicio" class="form-servicio">
+                        <input type="text" name="habitacion" placeholder="Habitación" required>
+
+                        <select name="servicio" required>
+                            <option value="Spa & Wellness">Spa & Wellness</option>
+                            <option value="Room service">Room service</option>
+                            <option value="Piscina Infinity">Piscina Infinity</option>
+                            <option value="Transfer">Transfer</option>
+                            <option value="Sala de Conferencias">Sala de Conferencias</option>
+                        </select>
+
+                        <input type="time" name="hora" required>
+
+                        <button type="submit" class="btn-admin">Guardar solicitud</button>
+                    </form>
+                </div>
+
+                <div class="panel">
+                    <h3>SOLICITUDES ACTIVAS</h3>
+
+                    <table>
+                        <tr>
+                            <th>HAB.</th>
+                            <th>SERVICIO</th>
+                            <th>HORA</th>
+                            <th>ESTADO</th>
+                        </tr>
+
+                        {% for s in solicitudes_servicios %}
+                        <tr>
+                            <td>{{ s.habitacion }}</td>
+                            <td>{{ s.servicio }}</td>
+                            <td>{{ s.hora }}</td>
+                            <td><span class="estado pendiente">{{ s.estado }}</span></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script>
+        function abrirServicio() {
+            document.getElementById("formServicio").style.display = "flex";
+        }
+    </script>
+
+</body>
+
+</html>

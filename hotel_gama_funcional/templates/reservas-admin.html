@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reservas - Hotel Gama</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <h1>GAMA</h1>
+            <p>HOTEL & SUITES</p>
+
+            <h4>Principal</h4>
+            <a href="admin.html">Dashboard</a>
+            <a href="reservas-admin.html">Reservas </a>
+            <a href="huespedes-admin.html">Huéspedes</a>
+            <a href="habitaciones-admin.html">Habitaciones</a>
+
+            <h4>Operaciones</h4>
+
+            <a href="servicios-admin.html">Servicios</a>
+            <a href="facturacion-admin.html">Facturación</a>
+            <a href="mensajes-admin.html">Mensajes </a>
+
+            <h4>Análisis</h4>
+
+            <a href="reportes-admin.html">Reportes</a>
+            <a href="configuracion-admin.html">Configuración</a>
+
+            <div class="user">
+                <div>AR</div>
+                <p>Admin Gama<br><small>Administrador</small></p>
+            </div>
+        </aside>
+
+        <main class="main">
+
+            <header>
+                <h2><span>Reservas</span> · Hotel Gama</h2>
+                <div>
+                    <small>{{ fecha_actual }}</small>
+                    <a href="index.html">Salir</a>
+
+                </div>
+            </header>
+
+            <section class="panel reservas-panel">
+
+                <h3>GESTIÓN DE RESERVAS</h3>
+
+                <div class="acciones-tabla">
+                    <button class="btn-admin" onclick="mostrarReserva()">
+                        + Nueva reserva
+                    </button>
+                    <div id="formReserva" style="display:none;">
+
+                        <form action="/guardar_reserva" method="POST" class="form-servicio">
+
+                            <input type="text" name="nombre" placeholder="Nombre completo" required>
+                            <input type="text" name="dni" placeholder="DNI" required>
+                            <input type="text" name="telefono" placeholder="Teléfono" required>
+                            <input type="email" name="correo" placeholder="Correo" required>
+
+                            <select name="habitacion" required>
+                                <option value="">Seleccionar habitación</option>
+                                <option value="Estándar Simple">Estándar Simple</option>
+                                <option value="Deluxe">Deluxe</option>
+                                <option value="Suite">Suite</option>
+                                <option value="Suite Presidencial">Suite Presidencial</option>
+                            </select>
+
+                            <input type="date" name="entrada" required>
+                            <input type="date" name="salida" required>
+
+                            <button type="submit">
+                                Guardar reserva
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    <a href="/exportar_reservas" class="btn-admin outline">Exportar</a>
+                </div>
+
+                <table>
+
+                    <tr>
+                        <th>#</th>
+                        <th>Huésped</th>
+                        <th>Habitación</th>
+                        <th>Entrada</th>
+                        <th>Salida</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                    </tr>
+
+                    {% for r in reservas %}
+                    <tr>
+                        <td>#{{ loop.index }}</td>
+                        <td>{{ r.nombre }}</td>
+                        <td>{{ r.habitacion }}</td>
+                        <td>{{ r.entrada }}</td>
+                        <td>{{ r.salida }}</td>
+                        <td>S/{{ r.precio }}</td>
+                        <td>
+                            <span class="estado activo">
+                                Confirmada
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+
+            </section>
+
+        </main>
+    </div>
+    <script>
+        function mostrarReserva() {
+
+            let form = document.getElementById("formReserva");
+
+            if (form.style.display === "none") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

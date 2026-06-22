@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reseñas - Hotel Gama</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="hotel">
+
+        <header class="hero">
+            <div class="circle"></div>
+            <div class="info">
+                <h1>GAMA</h1>
+                <p>HOTEL & SUITES · MIRAFLORES, LIMA</p>
+                <div class="stars">★★★★★</div>
+                <p class="desc">
+                    Un refugio de elegancia en el corazón de Miraflores.
+                </p>
+            </div>
+        </header>
+
+        <nav>
+            <a class="tab" href="habitaciones.html">Habitaciones</a>
+            <a class="tab" href="servicios.html">Servicios</a>
+            <a class="tab" href="informacion.html">Información</a>
+            <a class="tab active" href="resena.html">Reseñas</a>
+            <a class="tab" href="galeria.html">Galería</a>
+        </nav>
+
+        <section class="seccion activa">
+
+            <div class="panel-resena">
+                <h2>DEJAR RESEÑA</h2>
+
+                <form action="/agregar_resena" method="POST" class="form-resena">
+                    <input type="text" name="nombre" placeholder="Tu nombre" required>
+
+                    <select name="puntuacion" required>
+                        <option value="5">★★★★★ Excelente</option>
+                        <option value="4">★★★★☆ Muy bueno</option>
+                        <option value="3">★★★☆☆ Regular</option>
+                        <option value="2">★★☆☆☆ Malo</option>
+                        <option value="1">★☆☆☆☆ Muy malo</option>
+                    </select>
+
+                    <textarea name="comentario" placeholder="Escribe tu experiencia..." required></textarea>
+
+                    <button type="submit">Publicar reseña</button>
+                </form>
+            </div>
+
+            <div class="resenas-grid">
+
+                {% for r in resenas %}
+                <div class="review-card">
+                    <div class="review-stars">
+                        {{ "★" * r.puntuacion|int }}
+                    </div>
+                    <p>"{{ r.comentario }}"</p>
+                    <span>— {{ r.nombre }}</span>
+                </div>
+                {% endfor %}
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"La suite presidencial superó todas mis expectativas."</p>
+                    <span>— Valentina R.</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"El restaurante La Cúpula tiene una de las mejores cartas."</p>
+                    <span>— Andrés M.</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <span>+51 939-332-591</span>
+            <span>reservas@gamahotel.com</span>
+            <span>Miraflores, Lima</span>
+            <a href="reserva.html">Reservar ahora</a>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

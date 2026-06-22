@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Gama</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="top">
+
+    <div class="hotel">
+
+        <header class="hero">
+            <div class="circle"></div>
+
+            <div class="info">
+                <h1>GAMA</h1>
+                <p>HOTEL & SUITES · MIRAFLORES, LIMA</p>
+                <div class="stars">★★★★★</div>
+                <p class="desc">
+                    Un refugio de elegancia en el corazón de Miraflores. Diseño contemporáneo,
+                    atención personalizada y vistas al Pacífico que convierten cada estancia en una
+                    experiencia única.
+                </p>
+            </div>
+        </header>
+
+        <nav>
+            <button class="tab active" onclick="mostrarSeccion('habitaciones', this)">Habitaciones</button>
+            <button class="tab" onclick="mostrarSeccion('servicios', this)">Servicios</button>
+            <a class="tab" href="informacion.html">
+                Información
+            </a>
+            <a class="tab" href="resena.html">
+                Reseña
+            </a>
+            <a class="tab" href="galeria.html">
+                Galería
+            </a>
+        </nav>
+
+        <main>
+
+            <section id="habitaciones" class="seccion activa">
+                <h2>TIPOS DE HABITACIÓN</h2>
+
+                <div class="grid">
+                    <div class="card">
+                        <img class="img" src="static/ChatGPT Image 22 jun 2026, 01_11_42.png" alt="Estándar Simple">
+
+                        <h3>Estándar Simple</h3>
+                        <p>25 m² · Cama Queen · Vista jardín · AC · Wi-Fi · TV 4K</p>
+
+                        <h4>S/ 280 <span>/ noche</span></h4>
+
+                        <a href="reserva.html" class="btn-reservar">
+                            Reservar
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <img class="img" src="static/ChatGPT Image 22 jun 2026, 01_00_22.png" alt="Estándar Doble">
+                        <h3>Estándar Doble</h3>
+                        <p>32 m² · 2 camas Queen · Vista ciudad · AC · Wi-Fi · Minibar</p>
+                        <h4>S/ 380 <span>/ noche</span></h4>
+                        <button>Disponible</button>
+                        <button class="gold">Piso 2</button>
+                        <a href="reserva.html" class="btn-reservar">
+                            Reservar
+                        </a>
+                    </div>
+
+                    <div class="card popular">
+                        <small>Más popular</small>
+                        <img class="img" src="static/ChatGPT Image 22 jun 2026, 01_09_29.png" alt="Deluxe">
+                        <h3>Deluxe</h3>
+                        <p>48 m² · Cama King · Vista Pacífico · Jacuzzi · Sala · Minibar premium</p>
+                        <h4>S/ 580 <span>/ noche</span></h4>
+                        <button>Disponible</button>
+                        <button class="gold">Piso 5</button>
+                        <a href="reserva.html" class="btn-reservar">
+                            Reservar
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid2">
+
+                    <div class="card-premium">
+
+                        <img src="static/ChatGPT Image 22 jun 2026, 00_58_36.png" alt="Suite Presidencial">
+
+                        <div class="contenido">
+
+                            <h3>Suite Presidencial</h3>
+
+                            <p>
+                                95 m² · Cama King + sala + comedor + terraza privada ·
+                                Vista 360° al Pacífico · Butler personal · Jacuzzi panorámico ·
+                                Acceso VIP a todos los servicios
+                            </p>
+
+                            <h2>S/ 1,200 <span>/ noche</span></h2>
+
+                            <div class="acciones">
+
+                                <span class="estado disponible">
+                                    Disponible
+                                </span>
+
+                                <span class="piso">
+                                    Piso 10
+                                </span>
+
+                                <a href="reserva.html" class="btn-reservar">
+                                    📅 Reservar
+                                </a>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-premium">
+
+                        <img src="static/ChatGPT Image 22 jun 2026, 01_13_31.png" alt="Suite Presidencial">
+
+                        <div class="contenido">
+
+                            <h3>Suite Familiar</h3>
+
+                            <p>
+                                70 m² · 1 cama King + 2 camas Twin · Sala familiar · 2 baños · Cocina equipada · Juegos
+                                para niños incluidos
+                            </p>
+
+                            <h2>S/ 780 <span>/ noche</span></h2>
+
+                            <div class="acciones">
+
+                                <span class="estado disponible">
+                                    Disponible
+                                </span>
+
+                                <span class="piso">
+                                    Piso 10
+                                </span>
+
+                                <a href="reserva.html" class="btn-reservar">
+                                    📅 Reservar
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+            </section>
+
+            <section id="servicios" class="seccion">
+                <h2>SERVICIOS INCLUIDOS</h2>
+
+                <div class="chips">
+                    <span>Wi-Fi 1 Gbps</span>
+                    <span>Desayuno buffet</span>
+                    <span>Piscina infinity</span>
+                    <span>Valet parking</span>
+                    <span>Recepción 24h</span>
+                    <span>Seguridad 24h</span>
+                    <span>Lavandería</span>
+                    <span>Business center</span>
+                </div>
+
+                <h2>SERVICIOS PREMIUM</h2>
+
+                <div class="grid4">
+                    <div class="card">
+                        <h3>Spa & Wellness</h3>
+                        <p>Masajes, aromaterapia, sauna</p>
+                        <h4>Desde S/ 120</h4>
+                    </div>
+
+                    <div class="card">
+                        <h3>Restaurante La Cúpula</h3>
+                        <p>Cocina fusión peruana, chef premiado</p>
+                        <h4>Desde S/ 85 / comensal</h4>
+                    </div>
+
+                    <div class="card">
+                        <h3>Transfer VIP</h3>
+                        <p>Aeropuerto · Vehículo de lujo</p>
+                        <h4>S/ 120 ida/vuelta</h4>
+                    </div>
+
+                    <div class="card">
+                        <h3>Sala de Eventos</h3>
+                        <p>Hasta 200 personas, AV incluido</p>
+                        <h4>Desde S/ 1,500 / evento</h4>
+                    </div>
+                </div>
+            </section>
+
+            <section id="informacion" class="seccion">
+                <h2>INFORMACIÓN</h2>
+                <p>Para ver la información completa del hotel, entra aquí:</p>
+
+                <a href="informacion.html" class="btn-reservar">
+                    Ver información
+                </a>
+            </section>
+
+            <section id="resenas" class="seccion">
+                <h2>RESEÑAS</h2>
+                <p>★★★★★ Excelente atención, habitaciones cómodas y servicios de lujo.</p>
+            </section>
+
+            <section id="galeria" class="seccion">
+                <h2>GALERÍA</h2>
+                <p>Aquí puedes colocar fotos del hotel.</p>
+            </section>
+
+        </main>
+
+        <footer>
+            <span>+51 939-332-591</span>
+            <span>reservas@gamahotel.com</span>
+            <span>Miraflores, Lima</span>
+            <a href="reserva.html">Reservar ahora</a>
+        </footer>
+
+    </div>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
